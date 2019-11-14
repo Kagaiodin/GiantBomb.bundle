@@ -34,7 +34,7 @@ class GiantBombAgent(Agent.Movies):
     def update(self, metadata, media, lang):
         obj = getJSON(metadata.id)
 
-        metadata.collections = obj['video_type'].split(', ')
+        metadata.collections = [obj['video_show']['title']]
         metadata.duration    = obj['length_seconds'] * 1000
         metadata.studio      = 'Giant Bomb'
         metadata.summary     = obj['deck']
